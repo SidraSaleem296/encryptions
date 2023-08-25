@@ -1,6 +1,3 @@
-# Encryptions
-# Decryptions
-
 # Barrac Encryption and Decryption
 
 This repository contains code for a simple encryption and decryption system called Barrac. It involves a series of checks including agent verification, keyword validation, and more to ensure secure communication.

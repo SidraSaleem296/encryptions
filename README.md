@@ -1,213 +1,27 @@
 # Encryptions
-# Encryptions
-import base64
-import time
-#decryption code is after the encryption code and will run after decommenting that code beacuse i have
-#added coomas before and after that
+# Decryptions
 
-#encryption
+# Barrac Encryption and Decryption
 
+This repository contains code for a simple encryption and decryption system called Barrac. It involves a series of checks including agent verification, keyword validation, and more to ensure secure communication.
 
-Characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ'
+## Usage
 
-Characters = Characters.lower()
+1. Run the script `encryption.py` for message encryption.
+2. Run the script `decryption.py` for message decryption.
 
-List_of_agents = ['Behemoth_arooj','Skipper_sana','Ghoul_hamde','Cryptonic_sid' ,'Drake_zeean ','Gloom_tanzeela','Diablo_areeba']
+## Instructions
 
-Barrac_codes = { 234,163,264,296,121,232,198,}
+1. **Encryption:**
+   - Enter your message and a key in the range of [1 - 26].
+   - Choose 'E' to encrypt the message.
+   - The encrypted message will be displayed in base64 format.
 
-agent_name_check = (input('enter your agent/cover name :'))
+2. **Decryption:**
+   - Provide the base64-encoded encrypted message and the correct key used for encryption.
+   - Choose 'D' to decrypt the message.
 
-print(agent_name_check)
+## Agent Verification
 
-barrac_code_check = eval(input('enter barrac code : '))
-
-keyword_check = input("enter your specific keyword : ")
-
-keyword = {'ONE ': "D",'SHOULD':"N",'READ': " E",'GOOD': "O",'INFORMTIVE':"T",'AWSOME': " K",'BOOKS ': "D"}
-
-if keyword.get(keyword_check) != None:
-   print("Well ! You have crossed the third check point ! Hurry up decode what team has sent \n Might be it''s urgent ")
-
-
-elif agent_name_check in List_of_agents and barrac_code_check in Barrac_codes  :
-    print(' Hi BUDDY!!! Seems like YOU ARE OUR TEAM''S SPY')
-
-else:
-    print("SUSPICIOUS ACTIVITY ALERT !!!! \n SOMEONE OUT OF THE TEAM IS TRYING TO REACH OUT THE ENCRYPTION "
-          "CODE \n  you might forgot the barrac  agent name \n Otherwise You are a spy  \n CAUGHT YOU ")
-
-check_point_4 = []
-n = eval(input("Enter number of elements : "))
-for i in range(0, n):
-    elements = eval(input())
-    check_point_4.append(elements)
-
-print(check_point_4)
-if check_point_4[3] == 20:
-
-    def encrypt(message, key):
-
-        encrypted = ''
-        for chars in message:
-            if chars in Characters:
-                num = Characters.find(chars)
-                num += key
-                encrypted += Characters[num]
-        return encrypted
-
-
-    def main():
-
-        message = str(input('Enter your message: '))
-        key = int(input('Enter you key [1 - 26]: '))
-        choice = input('Encrypt or Decrypt? [E/D]: ')
-
-        if choice.lower().startswith('e'):
-            (encrypt(message, key))
-
-            plain_text = (encrypt(message, key))
-            cipher_text = base64.b64encode(plain_text.encode())
-
-            print(cipher_text.decode())
-
-        else:
-            print('warning !!!! who are u ? you are not from this team!!!')
-
-
-    if __name__ == '__main__':
-        main()
-        if time.time()>= 30 :
-            start_time = time.time()
-            main()
-            print("%s seconds " % (time.time() - start_time))
-            print('you took pretty less time ,just',"--- %s seconds ---" % (time.time() - start_time))
-            print('you took pretty less time ,just',"--- %s seconds ---" % (time.time() - start_time))
-            print('remember the codes and details carefully .You should not take that much time ')
-            print('************************************')
-            print('following are your details given ,plz remember next time ')
-            print('Barrac code : ' , Barrac_codes)
-            print('keyword :' , keyword_check)
-            print('Agent name :' , agent_name_check)
-            print('key_in_list: 20')
-        else:
-            start_time = time.time()
-            main()
-            print("%s seconds " % (time.time() - start_time))
-            print('you took pretty much time ,',"--- %s seconds ---" % (time.time() - start_time))
-            print('remember the codes and details carefully .You should not take that much time ')
-            print('************************************')
-            print('following are your details given ,plz remember next time ')
-            print('Barrac code : ' , Barrac_codes)
-            print('keyword :' , keyword_check)
-            print('Agent name :' , agent_name_check)
-            print('key_in_list:' , check_point_4)
-
-
-
-else:
-    print(('warning !!!! ENEMY : /'
-          ' who are u  ? /'
-          'you are not from this team!!!'))
-
-'''
-
-#decryption
-import base64
-import time
-Charachters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ'
-Charachters = Charachters.lower()
-List_of_agents = ['Behemoth_arooj','Skipper_sana','Ghoul_hamde','Cryptonic_sid' ,'Drake_zeean ','Gloom_tanzeela','Diablo_areeba']
-
-Barrac_codes = { 234,163,264,296,121,232,198,}
-
-agent_name_check = (input('enter your agent/cover name :'))
-
-print(agent_name_check)
-
-barrac_code_check = eval(input('enter barrac code : '))
-
-keyword_check = input("enter your specific keyword : ")
-
-keyword = {'ONE ': "D",'SHOULD':"N",'READ': " E",'GOOD': "O",'INFORMTIVE':"T",'AWSOME': " K",'BOOKS ': "D"}
-
-if keyword.get(keyword_check) != None:
-   print("Well ! You have crossed the third check point ! Hurry up decode what team has sent \n Might be it''s urgent ")
-
-
-elif agent_name_check in List_of_agents and barrac_code_check in Barrac_codes  :
-    print(' Hi BUDDY!!! Seems like YOU ARE OUR TEAM''S SPY')
-
-else:
-    print("SUSPICIOUS ACTIVITY ALERT !!!! \n SOMEONE OUT OF THE TEAM IS TRYING TO REACH OUT THE ENCRYPTION "
-          "CODE \n  you might forgot the barrac  agent name \n Otherwise You are a spy  \n CAUGHT YOU ")
-
-check_point_4 = []
-n = eval(input("Enter number of elements : "))
-for i in range(0, n):
-    elements = eval(input())
-    check_point_4.append(elements)
-
-print(check_point_4)
-if check_point_4[3] == 20:
-
-
-    def decrypt(message, key):
-        decrypted = ''
-        for chars in message:
-            if chars in Charachters:
-                num = Charachters.find(chars)
-                num -= key
-                decrypted += Charachters[num]
-
-        return decrypted
-
-
-    def main():
-        message = str(input('Enter your message: '))
-        key = int(input('Enter you key [1 - 26]: '))
-        choice = input('Encrypt or Decrypt? [E/D]: ')
-
-        if choice.lower().startswith('e'):
-            plain_text = base64.b64decode(message)
-            cipher_text = decrypt(plain_text.decode(), key)
-
-            print(cipher_text)
-        else:
-            print('warning !!!! who are u ? you are not from this team!!!')
-
-    if __name__ == '__main__':
-        main()
-        if time.time()>= 30 :
-            start_time = time.time()
-            main()
-            print("%s seconds " % (time.time() - start_time))
-            print('you took pretty less time ,just',"--- %s seconds ---" % (time.time() - start_time))
-            print('remember the codes and details carefully .You should not take that much time ')
-            print('************************************')
-            print('following are your details given ,plz remember next time ')
-            print('Barrac code : ' , Barrac_codes)
-            print('keyword :' , keyword_check)
-            print('Agent name :' , agent_name_check)
-            print('key_in_list:' , check_point_4)
-        else:
-            start_time = time.time()
-            main()
-            print("%s seconds " % (time.time() - start_time))
-            print('you took pretty much time ,',"--- %s seconds ---" % (time.time() - start_time))
-            print('remember the codes and details carefully .You should not take that much time ')
-            print('************************************')
-            print('following are your details given ,plz remember next time ')
-            print('Barrac code : ' , Barrac_codes)
-            print('keyword :' , keyword_check)
-            print('Agent name :' , agent_name_check)
-            print('key_in_list: 20 ')
-
-    if __name__ == '__main__':
-            main()
-
-else:
-    print('warning !!!! ENEMY :) /'
-          ' who are u  ? /'
-          'you are not from this team!!!')
-'''
+Agents should follow these steps to access the encrypted messages:
+1. Enter the agent/cover name.
